@@ -4,8 +4,8 @@ namespace Structure
 {
     public class LinkedListDuplex<T> : IEnumerable
     {
-        public LinkedListDuplexItem<T> Head { get; set; }
-        public LinkedListDuplexItem<T> Tail { get; set; }
+        public ItemDuplex<T> Head { get; set; }
+        public ItemDuplex<T> Tail { get; set; }
         public int Count { get; private set; }
 
         public LinkedListDuplex() { }
@@ -22,7 +22,7 @@ namespace Structure
             }
             else
             {
-                var item = new LinkedListDuplexItem<T>(data);
+                var item = new ItemDuplex<T>(data);
                 Tail.Next = item;
                 item.Previous = Tail;
                 Tail = item;
@@ -79,7 +79,7 @@ namespace Structure
 
         private void SetHeadAndTail(T data)
         {
-            Head = new LinkedListDuplexItem<T>(data);
+            Head = new ItemDuplex<T>(data);
             Tail = Head;
             Count = 1;
         }

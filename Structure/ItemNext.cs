@@ -2,7 +2,7 @@
 
 namespace Structure
 {
-    public class LinkedListItem<T>
+    public class ItemNext<T>
     {
         private T data = default(T);
         public T Data
@@ -16,9 +16,9 @@ namespace Structure
                     throw new ArgumentNullException(nameof(value));
             }
         }
-        public LinkedListItem<T> Next { get; set; }
+        public ItemNext<T> Next { get; set; }
 
-        public LinkedListItem(T data)
+        public ItemNext(T data)
         {
             Data = data;
         }

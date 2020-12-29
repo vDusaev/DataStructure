@@ -2,7 +2,7 @@
 
 namespace Structure
 {
-    public class LinkedListDuplexItem<T>
+    public class ItemPrevious<T>
     {
         private T data = default(T);
         public T Data
@@ -16,10 +16,9 @@ namespace Structure
                     throw new ArgumentNullException(nameof(value));
             }
         }
-        public LinkedListDuplexItem<T> Previous { get; set; }
-        public LinkedListDuplexItem<T> Next { get; set; }
+        public ItemPrevious<T> Previous { get; set; }
 
-        public LinkedListDuplexItem(T data)
+        public ItemPrevious(T data)
         {
             Data = data;
         }

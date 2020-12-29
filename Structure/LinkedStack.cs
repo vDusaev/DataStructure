@@ -4,19 +4,19 @@ namespace Structure
 {
     public class LinkedStack<T>
     {
-        public LinkedStackItem<T> Head { get; set; } = null;
+        public ItemPrevious<T> Head { get; set; } = null;
         public int Count { get; set; } = 0;
 
         public LinkedStack() { }
         public LinkedStack(T data) 
         {
-            Head = new LinkedStackItem<T>(data);
+            Head = new ItemPrevious<T>(data);
             Count = 1;
         }
 
         public void Push(T data)
         {
-            var newItem = new LinkedStackItem<T>(data);
+            var newItem = new ItemPrevious<T>(data);
             newItem.Previous = Head;
             Head = newItem;
             Count++;

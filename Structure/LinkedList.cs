@@ -4,8 +4,8 @@ namespace Structure
 {
     public class LinkedList<T> : IEnumerable
     {
-        public LinkedListItem<T> Head { get; private set; }
-        public LinkedListItem<T> Tail { get; private set; }
+        public ItemNext<T> Head { get; private set; }
+        public ItemNext<T> Tail { get; private set; }
         public int Count { get; private set; }
 
         public LinkedList()
@@ -21,7 +21,7 @@ namespace Structure
         {
             if (Tail != null)
             {
-                var item = new LinkedListItem<T>(data);
+                var item = new ItemNext<T>(data);
                 Tail.Next = item;
                 Tail = item;
                 Count++;
@@ -65,7 +65,7 @@ namespace Structure
         }
         public void AppendHead(T data)
         {
-            var item = new LinkedListItem<T>(data)
+            var item = new ItemNext<T>(data)
             {
                 Next = Head
             };
@@ -82,7 +82,7 @@ namespace Structure
                 {
                     if (current.Data.Equals(target))
                     {
-                        var item = new LinkedListItem<T>(data);
+                        var item = new ItemNext<T>(data);
                         item.Next = current.Next;
                         current.Next = item;
                         Count++;
@@ -103,7 +103,7 @@ namespace Structure
         }
         private void SetHeadAndTail(T data)
         {
-            var item = new LinkedListItem<T>(data);
+            var item = new ItemNext<T>(data);
             Head = item;
             Tail = item;
             Count = 1;
